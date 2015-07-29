@@ -1,7 +1,7 @@
 FROM		hauptmedia/mariadb:10.0-galera
-MAINTAINER	Julian Haupt <julian.haupt@hauptmedia.de>
+MAINTAINER	Dylan Miles <dylan.g.miles@gmail.com>
 
-# install required packages 
+# install required packages
 RUN		apt-get update -qq && \
 		apt-get install -y --no-install-recommends bzip2 && \
                 apt-get clean autoclean && \
