@@ -1,4 +1,4 @@
 build:
-	docker build -t="hauptmedia/mariadb-backup" .
+	docker build -t="dylangmiles/docker-mariadb-backup" .
 
-.PHONY: build 
+.PHONY: build
