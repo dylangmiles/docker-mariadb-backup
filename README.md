@@ -1,3 +1,5 @@
+##TODO: Delete older backup files: http://stackoverflow.com/questions/13489398/delete-files-older-than-10-days-using-shell-script-in-unix
+
 # docker-mariadb-backup
 
 This container can be used to periodically backup MySQL, MariaDB, and MariaDB Galera cluster instances.
