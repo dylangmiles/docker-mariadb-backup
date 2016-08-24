@@ -132,6 +132,14 @@ if [ "$RETVAL" == 0 ]; then
 	cp -v ${BACKUP_FILE}* /var/destination
 
 	RETVAL=$?
+fi
+
+#Remove the temporary backup
+if [ "$RETVAL" == 0 ]; then
+	echo Remove temporary files
+	rm -v ${BACKUP_FILE}*
+
+	RETVAL=$?
 fi	
 
 if [ "$RETVAL" == 0 ]; then
