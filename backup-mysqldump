@@ -47,7 +47,7 @@ while getopts ":u:p:h:P:d:c:e:x" opt; do
 done
 
 if [ -z "$BACKUP_FILE" ]; then
-	BACKUP_FILE=/var/backups/$(date +"%Y-%m-%d-%H%M%S")_${MYSQL_HOST}_mysqldump
+	BACKUP_FILE=/var/tmp/$(date +"%Y-%m-%d-%H%M%S")_${MYSQL_HOST}_mysqldump
 fi
 
 if [ -z "$MYSQL_USER" ] || [ -z "$MYSQL_PASSWORD" ]; then
@@ -125,6 +125,14 @@ if [ "$RETVAL" == 0 ]; then
 		RETVAL=$?
 	fi
 fi
+
+#Copy files to the destination
+if [ "$RETVAL" == 0 ]; then
+	echo Copy files to the destination
+	cp -v ${BACKUP_FILE}* /var/destination
+
+	RETVAL=$?
+fi	
 
 if [ "$RETVAL" == 0 ]; then
 	echo Backup finished successfully.
